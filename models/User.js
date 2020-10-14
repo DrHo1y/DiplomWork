@@ -10,3 +10,5 @@ const user = new Schema({
     products: [{ type: Schema.Types.ObjectId, ref: 'Product'}]
 
 })
+
+module.exports = model('User', user)
