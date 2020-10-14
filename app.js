@@ -4,9 +4,11 @@ const config = require('config')
 
 app.use(express.json({ extended: true }))
 
+app.use('/api/catalog', require('./routes/Catalog.routes'))
+
 const uri = config.get('mongoUri')
 const PORT = config.get('port') || 5000
-
+    
 async function start() {
     try {
         await mongoose.connect(uri, {
