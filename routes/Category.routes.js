@@ -1,14 +1,14 @@
-const { Router } = require('express')
-const { check, validationResult } = require('express-validator')
-const Catalog = require('./models/Category')
+const {Router} = require('express')
+const {check, validationResult} = require('express-validator')
+const Category = require('../models/Category')
 const router = Router()
 
 router.get(
-    '/catalog',
+    '/category',
     async (req, res) => {
         try {
-            const catalog = await Catalog.find({})
-            res.status(200).json({ data: catalog })
+            const Category = await Category.find({})
+            res.status(200).json({ data: Category })
         } catch (e) {
             res.status(500).json({ message: 'Server error' })
             console.log(e.message)
@@ -16,7 +16,7 @@ router.get(
 })
 
 router.post(
-    '/catalog/add',
+    '/category/add',
     [
         check('name', 'Введите название категории!')
             .notEmpty()
@@ -37,15 +37,15 @@ router.post(
 
             const { name, popular } = req.body
 
-            const condidate = await Catalog.findOne({ name })
+            const condidate = await Category.findOne({ name })
 
             if (condidate) {
                 return res.status(400).json({ message: 'Такая категория уже создана!' })
             }
 
-            const catalog = new Catalog({ name, popular })
+            const Category = new Category({ name, popular })
 
-            await catalog.save()
+            await Category.save()
             
             res.status(201).json({ message: 'Категория создана!' })
 
@@ -54,3 +54,5 @@ router.post(
             console.log(e.message)
         }
     })
+
+module.exports = router

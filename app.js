@@ -1,10 +1,12 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const app = express()
 const config = require('config')
 
 app.use(express.json({ extended: true }))
+app.use(express.json())
 
-app.use('/api/catalog', require('./routes/Catalog.routes'))
+app.use('/api/catalog', require('./routes/Category.routes'))
 
 const uri = config.get('mongoUri')
 const PORT = config.get('port') || 5000
