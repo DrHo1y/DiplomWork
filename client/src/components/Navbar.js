@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Navbar, Icon } from 'react-materialize'
+import { Navbar, Icon, NavItem } from 'react-materialize'
 
 export const NavBar = () => {
     return (
@@ -21,9 +21,12 @@ export const NavBar = () => {
                 preventScrolling: true
             }}
         >
-            <li><NavLink to="/main">Главная</NavLink></li>
-            <li><NavLink to="/create">Создать</NavLink></li>
-            <li><NavLink to="/links">Ссылки</NavLink></li>
+            <NavItem>
+                <NavLink to="/">Главная</NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink to="/add">Добавить</NavLink>
+            </NavItem>
         </Navbar>
     )
 }
