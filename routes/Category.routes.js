@@ -4,7 +4,7 @@ const Category = require('../models/Category')
 const router = Router()
 
 router.get(
-    '/category',
+    '/all',
     async (req, res) => {
         try {
             const Category = await Category.find({})
@@ -16,7 +16,7 @@ router.get(
 })
 
 router.post(
-    '/category/add',
+    '/add',
     [
         check('name', 'Введите название категории!')
             .notEmpty()

@@ -1,2 +1,17 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.row {
+    margin-bottom: 0!important;
+    
+}
+.row .col {
+    padding: 0!important;
+}
+
+.col .text-lol {
+    padding: 0 .75em;
+}
+.content {
+    max-height: 400px;
+}

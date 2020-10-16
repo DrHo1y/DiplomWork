@@ -6,9 +6,10 @@ export const Catalog = () => {
         <Row>
             <Col
                 className="teal white-text"
-                s={12}
+                s={10}
+                offset='s1'
             >
-                text
+                <div className="text-lol">text</div>
             </Col>
         </Row>
     )
