@@ -5,8 +5,9 @@ export const Home = () => {
         <Row>
             <Col
                 className="teal white-text"
-                s={10}
-                offset='s1'
+                l={10}
+                s={12}
+                offset='l1'
             >
                 <div className="content">
                     <Carousel
@@ -28,10 +29,10 @@ export const Home = () => {
                         <div className="amber">
                             <h2>
                                 Second Panel
-                            </h2>
+                        </h2>
                             <p>
                                 This is your second panel
-                            </p>
+                        </p>
                         </div>
                         <div className="green">
                             <h2>
@@ -50,6 +51,16 @@ export const Home = () => {
                             </p>
                         </div>
                     </Carousel>
+                </div>
+            </Col>
+            <Col
+                className="teal white-text"
+                l={10}
+                s={12}
+                offset='l1'
+            >
+                <div className="text-lol">
+                    <p>Популярные товары</p>
                 </div>
             </Col>
         </Row>

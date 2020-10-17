@@ -6,8 +6,9 @@ export const NavBar = () => {
     return (
         <Row>
             <Col
-                s={10}
-                offset='s1'
+                l={10}
+                s={12}
+                offset="l1"
             >
                 <Navbar
                     alignLinks="left"
@@ -29,6 +30,7 @@ export const NavBar = () => {
                     
                     <NavLink to="/">Главная</NavLink>
                     <NavLink to="/catalog">Каталог</NavLink>
+                    <NavLink to="/catalog/add">Добавить категорию</NavLink>
                    
                 </Navbar>
             </Col>

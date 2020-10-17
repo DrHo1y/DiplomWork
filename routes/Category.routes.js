@@ -9,6 +9,10 @@ router.get(
         try {
             const Category = await Category.find({})
             res.status(200).json({ data: Category })
+            
+            if (!res) {
+                return res.status(400).json({ message: 'Нет данных' })
+            }
         } catch (e) {
             res.status(500).json({ message: 'Server error' })
             console.log(e.message)
@@ -17,32 +21,30 @@ router.get(
 
 router.post(
     '/add',
-    [
-        check('name', 'Введите название категории!')
-            .notEmpty()
-            .isString(),
-        check('popular')
-            .toBoolean()
-    ],
+    // [
+    //     check('name', 'Введите название категории!'),
+    //     check('popular')
+    //         .toBoolean()
+    // ],
     async (req, res) => {
         try {
-            const error = validationResult(req)
+            // const error = validationResult(req)
 
-            if (!error.isEmpty()) {
-                return res.status(400).json({ 
-                    errors: error.array(),
-                    message: 'Не корректные данные'
-                })
-            }
+            // if (!error.isEmpty()) {
+            //     return res.status(400).json({ 
+            //         errors: error.array(),
+            //         message: 'Не корректные данные'
+            //     })
+            // }
 
             const { name, popular } = req.body
+            console.log(req.body)
+            //const condidate = await Category.findOne({ name })
 
-            const condidate = await Category.findOne({ name })
-
-            if (condidate) {
-                return res.status(400).json({ message: 'Такая категория уже создана!' })
-            }
-
+            // if (condidate) {
+            //     return res.status(400).json({ message: 'Такая категория уже создана!' })
+            // }
+            console.log('ne tyt')
             const Category = new Category({ name, popular })
 
             await Category.save()
