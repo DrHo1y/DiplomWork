@@ -10,10 +10,16 @@ export const AddCategory = () => {
     const handleAddCategory = async () => {
         try {
             console.log('tyti')
+            const form2 = JSON.stringify(form)
+            console.log(form2)
             const req = await fetch('/api/catalog/add', {
                 mode: 'no-cors',
-                method: 'POST'
-            }, { form })
+                method: 'POST',
+                body: form2,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            } )
             console.log(req.message)
         } catch (e) { }
     }

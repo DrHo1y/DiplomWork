@@ -21,35 +21,45 @@ router.get(
 
 router.post(
     '/add',
-    // [
-    //     check('name', 'Введите название категории!'),
-    //     check('popular')
-    //         .toBoolean()
-    // ],
+    [
+        check('name', 'Введите название категории!')
+            .notEmpty(),
+        check('popular')
+            .toBoolean()
+    ],
     async (req, res) => {
         try {
-            // const error = validationResult(req)
+            const error = validationResult(req)
 
-            // if (!error.isEmpty()) {
-            //     return res.status(400).json({ 
-            //         errors: error.array(),
-            //         message: 'Не корректные данные'
-            //     })
-            // }
+            if (error.isEmpty()) {
+                return res.status(400).json({ 
+                    errors: error.array(),
+                    message: 'Не корректные данные'
+                })
+            }
 
             const { name, popular } = req.body
-            console.log(req.body)
-            //const condidate = await Category.findOne({ name })
-
-            // if (condidate) {
-            //     return res.status(400).json({ message: 'Такая категория уже создана!' })
-            // }
-            console.log('ne tyt')
-            const Category = new Category({ name, popular })
-
-            await Category.save()
+            console.log(name, popular)
             
-            res.status(201).json({ message: 'Категория создана!' })
+            try {
+                const condidate = await Category.findOne({ name })
+                if (condidate) {
+                    return res.status(400).json({ message: 'Такая категория уже создана!' })
+                }
+            } catch(e) {}
+            
+
+            try {
+                const Category = new Category({ name, popular })
+
+                await Category.save()
+            
+                res.status(201).json({ message: 'Категория создана!' })
+            } catch (e) {
+                res.status(400).json({ message: 'create Category error'})
+                console.log(e)
+            }
+            
 
         } catch (e) {
             res.status(500).json({ message: 'Server error'})

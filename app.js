@@ -4,6 +4,7 @@ const app = express()
 const config = require('config')
 
 app.use(express.json({ extended: true }))
+app.use(express.json())
 
 app.use('/api/catalog', require('./routes/Category.routes'))
 
@@ -14,8 +15,8 @@ async function start() {
     try {
         await mongoose.connect(uri, {
             useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false
+            useUnifiedTopology: true//,
+            //useFindAndModify: false
         })
         app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`))
     } catch (e) {
