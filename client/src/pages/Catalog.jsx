@@ -18,7 +18,7 @@ export const Catalog = () => {
             })
             const data = await req.json()
             setCategory(data)
-            console.log('lol')
+            console.log(data)
         } catch (e) {
             console.log(e)
         }
@@ -42,7 +42,7 @@ export const Catalog = () => {
                         <p>Название - {res.name}</p><br/>
                         <p>Популярный - </p>
                         <input  type="checkbox" value={res.popular} disabled="true" />
-                    </div>     
+                </div>     
                 )}
                 
             </Col>

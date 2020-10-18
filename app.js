@@ -4,7 +4,6 @@ const app = express()
 const config = require('config')
 
 app.use(express.json({ extended: true }))
-app.use(express.json())
 
 app.use('/api/catalog', require('./routes/Category.routes'))
 

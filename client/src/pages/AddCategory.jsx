@@ -3,30 +3,31 @@ import { Row, Col, TextInput, Checkbox, Button, Icon } from 'react-materialize'
 
 export const AddCategory = () => {
 
-    const [form, setForm] = useState({
-        name: '', popular: 'false'
-    })
+    const [name, setName] = useState('')
+    const [popular, setPopular] = useState(false)
 
-    const handleAddCategory = async () => {
+    const changeHandler = event => {
+        setName(event.target.name = event.target.value)
+    }
+    
+    const addCategoryHandler = async () => {
         try {
-            console.log('tyti')
-            const form2 = JSON.stringify(form)
-            console.log(form2)
+            let body = {
+                name: name,
+                popular: popular
+            }
+            body = JSON.stringify(body)
             const req = await fetch('/api/catalog/add', {
                 mode: 'no-cors',
                 method: 'POST',
-                body: form2,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                'Content-Type': 'application/json',
+                body
             } )
             console.log(req.message)
         } catch (e) { }
     }
     
-    const handlerChange = event => {
-        setForm({...form, [event.target.name]:event.target.value })
-    }
+    
 
     return (
         <Row>
@@ -49,8 +50,9 @@ export const AddCategory = () => {
                                 name="name"
                                 l={8}
                                 s={12}
+                                value={name}
                                 placeholder="Название категории"
-                                onChange={handlerChange}
+                                onChange={changeHandler}
                             />
                         </Col>
 
@@ -62,9 +64,10 @@ export const AddCategory = () => {
                             <Checkbox
                                 id="popular"
                                 label="Популярная категория?"
-                                value={form.popular}
+                                checked={popular}
+                                value=""
                                 name="popular"
-                                onChange={handlerChange}
+                                onChange={() => setPopular(!popular)}
                             />
                         </Col>
 
@@ -77,7 +80,7 @@ export const AddCategory = () => {
                                 node="button"
                                 type="submit"
                                 waves="light"
-                                onClick={handleAddCategory}
+                                onClick={addCategoryHandler}
                             >
                                 Submit
                                 <Icon right>
