@@ -1,7 +1,7 @@
 .pop-category {
     $height: 400px;
     $width: 100%;
-    $margin: 25px 300px 0 300px;
+    $margin: 0 300px;
     $textPadding: 20px;
 
     width: $width;
@@ -17,7 +17,11 @@
         .pop-category__main {
             grid-column: span 1 ;
             grid-row: span 2;
-            display: block;
+            padding: $textPadding;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.1);
+            }
         }
 
         .pop-category__minor {
@@ -26,6 +30,7 @@
             padding: $textPadding;
 
             &:hover {
+                cursor: pointer;
                 background-color: rgba(0, 0, 0, 0.1);
             }
         }
