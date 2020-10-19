@@ -1,0 +1,30 @@
+.nav {
+
+    $height: 40px;
+    $fontsize: 18px;
+
+    height: $height;
+    background-color: #ccc;
+    display: block;
+
+    .nav__container {
+        height: $height;
+        display: flex;
+        justify-content: space-between;
+
+        .nav__item {
+            display: inline-flex;
+            align-items: center;
+            padding-right: 5rem;
+            padding-left: 5rem;
+            color: #fff;
+            font-size: $fontsize;
+            cursor: pointer;
+            height: $height;
+
+            &:hover {
+                background-color: rgb(138, 133, 133);
+            } 
+        }
+    }
+}

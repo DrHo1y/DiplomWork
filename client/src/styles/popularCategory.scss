@@ -1,0 +1,33 @@
+.pop-category {
+    $height: 400px;
+    $width: 100%;
+    $margin: 25px 300px 0 300px;
+    $textPadding: 20px;
+
+    width: $width;
+
+    &__wrapper {
+        background-color: rgb(221, 76, 137);
+        height: $height;
+        margin: $margin;
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        grid-auto-flow: dense;
+
+        .pop-category__main {
+            grid-column: span 1 ;
+            grid-row: span 2;
+            display: block;
+        }
+
+        .pop-category__minor {
+            grid-column: span 1;
+            grid-row: span 1;
+            padding: $textPadding;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
