@@ -5,13 +5,14 @@
 
     .footer__wrapper {
         margin: $margin;
-        background-color: maroon;
+        background-color: #FF1E00; 
         height: inherit;
         display: grid;
         grid-template-columns: 3fr 2fr;
         grid-template-rows: 1fr;
         grid-auto-flow: dense;
         font-size: 14px;
+        color: #6f1c3c;
 
         .footer__left {
             margin-right: 2rem;
@@ -22,7 +23,7 @@
                 align-items: center;
                 padding: 1rem;
                 a {
-                    color: ivory;
+                    color: inherit;
                     text-decoration: none;
                     padding: 1rem;
                 }
@@ -33,7 +34,7 @@
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
-            color: ivory;
+           
 
 
             .footer__copyright {
@@ -48,7 +49,6 @@
                 justify-content: flex-end;
                 align-content: center;
                 padding-right: 2rem;
-                color: rgb(70, 4, 4);
             }
         }
     }

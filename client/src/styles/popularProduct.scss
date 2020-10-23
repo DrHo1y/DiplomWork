@@ -5,7 +5,7 @@
 
     &__wrapper {
         margin: $margin;
-        background: linear-gradient(to bottom right, rgb(79, 192, 84), rgb(12, 126, 18));
+        background-color:#ff8373;
         height: inherit;
         width: auto;
         display: grid;
@@ -21,7 +21,7 @@
             justify-content: center;
             align-items: center;
             padding: 1rem;
-            background-color: lightskyblue;
+            background-color: #a61300;
         }
 
         .product__item {

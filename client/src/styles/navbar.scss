@@ -3,7 +3,7 @@
     $fontsize: 18px;
 
     height: $height;
-    background-color: #ccc;
+    background-color: rgb(238, 59, 128);
     display: block;
 
     .nav__container {
@@ -17,18 +17,19 @@
             align-items: center;
             padding-right: 3rem;
             padding-left: 3rem;
-            color: #fff;
+            color: #6f1c3c;
+            font-weight: 600;
             font-size: $fontsize;
             cursor: pointer;
             height: $height;
 
             &:hover {
-                background-color: rgb(138, 133, 133);
+                background-color:#a52959;
             } 
         }
 
         .active {
-            background-color: rgb(180, 176, 149);
+            background-color: #ee6b9e;
         }
     }
 }
