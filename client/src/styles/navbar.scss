@@ -23,6 +23,11 @@
             cursor: pointer;
             height: $height;
 
+            a, a:visited {
+                color: inherit;
+                background-color: inherit;
+            }
+
             &:hover {
                 background-color:#a52959;
             } 

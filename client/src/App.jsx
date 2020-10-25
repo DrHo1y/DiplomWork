@@ -1,17 +1,20 @@
 import React from 'react'
 import { MyFooter } from './component/myFooter'
 import { Navbar } from './component/navbar'
-import { PopularCategory } from './component/popularCategory'
-import { PopularProduct } from './component/popularProduct'
-
+import { BrowserRouter as Router } from 'react-router-dom'
+import { useRoutes } from './routes'
 
 function App() {
+  const routes = useRoutes()
   return (
     <div className="app">
-      <Navbar />
-      <PopularCategory />
-      <PopularProduct />
-      <MyFooter/>
+      
+      <Router>
+        <Navbar />
+        {routes}
+        <MyFooter />
+      </Router>
+      
     </div>
   )
 }
