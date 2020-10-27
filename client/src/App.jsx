@@ -7,15 +7,17 @@ import { useRoutes } from './routes'
 function App() {
   const routes = useRoutes()
   return (
-    <div className="app">
+    
       
       <Router>
+        <div className="wrapper">
         <Navbar />
         {routes}
         <MyFooter />
+        </div>
       </Router>
       
-    </div>
+    
   )
 }
 

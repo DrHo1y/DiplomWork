@@ -1,55 +1,45 @@
 .footer {
-    $margin: 0 300px;
-    width: 100%;
-    height: 80px;
+    background-color: #ff1e00;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: dense;
+    font-size: 14px;
+    color: #6f1c3c;
 
-    .footer__wrapper {
-        margin: $margin;
-        background-color: #FF1E00; 
-        height: inherit;
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-        grid-template-rows: 1fr;
-        grid-auto-flow: dense;
-        font-size: 14px;
-        color: #6f1c3c;
+    .footer__left {
+        margin-right: 2rem;
 
-        .footer__left {
-            margin-right: 2rem;
-
-            .footer__links {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+        .footer__links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            a {
+                color: inherit;
+                text-decoration: none;
                 padding: 1rem;
-                a {
-                    color: inherit;
-                    text-decoration: none;
-                    padding: 1rem;
-                }
             }
         }
+    }
 
-        .footer__right {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
-           
+    .footer__right {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
 
+        .footer__copyright {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding: 10px;
+        }
 
-            .footer__copyright {
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                padding: 10px;
-            }
-
-            .footer__develop {
-                display: flex;
-                justify-content: flex-end;
-                align-content: center;
-                padding-right: 2rem;
-            }
+        .footer__develop {
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
+            padding-right: 2rem;
         }
     }
 }

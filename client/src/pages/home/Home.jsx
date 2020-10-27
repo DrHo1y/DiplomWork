@@ -1,6 +1,6 @@
 import React from 'react'
-import { PopularCategory } from '../component/popularCategory'
-import { GroupOfGoods } from '../component/groupOfGoods'
+import { PopularCategory } from '../../component/popularCategory'
+import { GroupOfGoods } from '../../component/groupOfGoods'
 
 export const Home = () => {
     const title = "test"

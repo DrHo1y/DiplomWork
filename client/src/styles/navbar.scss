@@ -1,40 +1,35 @@
 .nav {
     $height: 40px;
     $fontsize: 18px;
-
-    height: $height;
     background-color: rgb(238, 59, 128);
-    display: block;
+    display: flex;
+    justify-content: space-between;
 
-    .nav__container {
+    .nav__item {
+        display: inline-flex;
+        align-items: center;
+        padding-right: 3rem;
+        padding-left: 3rem;
+        color: #6f1c3c;
+        font-weight: 600;
+        font-size: $fontsize;
+        cursor: pointer;
         height: $height;
-        display: flex;
-        justify-content: space-between;
-        margin: 0 300px;
 
-        .nav__item {
-            display: inline-flex;
-            align-items: center;
-            padding-right: 3rem;
-            padding-left: 3rem;
-            color: #6f1c3c;
-            font-weight: 600;
-            font-size: $fontsize;
-            cursor: pointer;
+        a,
+        a:visited {
+            color: none;
+            background-color: inherit;
             height: $height;
-
-            a, a:visited {
-                color: inherit;
-                background-color: inherit;
-            }
-
-            &:hover {
-                background-color:#a52959;
-            } 
         }
 
-        .active {
-            background-color: #ee6b9e;
+        &:hover {
+            background-color: #a52959;
+            height: $height;
         }
+    }
+
+    .active {
+        background-color: #ee6b9e;
     }
 }
