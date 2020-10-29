@@ -3,6 +3,7 @@
 @import "myFooter";
 @import "../pages/about/About.style.scss";
 @import "../pages/home/Home.style.scss";
+@import "../pages/repair/repair.style.scss";
 
 * {
     margin: 0;
@@ -11,6 +12,9 @@
 }
 body {
     background-color: #ff837363;
+}
+a {
+    text-decoration: none;
 }
 .wrapper {
     display: grid;
@@ -23,6 +27,6 @@ body {
 @import "popularCategory";
 
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
-@import "~materialize-css/dist/css/materialize.min.css";
+// @import "~materialize-css/dist/css/materialize.min.css";
 
 //color pattern https://colorscheme.ru/#5k42fw0w0w0w0

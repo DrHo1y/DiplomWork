@@ -1,7 +1,7 @@
 .nav {
     $height: 40px;
     $fontsize: 18px;
-    background-color: rgb(238, 59, 128);
+    background-color: #ee3b80;
     display: flex;
     justify-content: space-between;
 
@@ -22,14 +22,15 @@
             background-color: inherit;
             height: $height;
         }
+        
 
         &:hover {
             background-color: #a52959;
             height: $height;
         }
-    }
-
-    .active {
-        background-color: #ee6b9e;
+        // a:active {
+        //     background-color: #ee6b9e;
+        //     height: $height;
+        // }
     }
 }

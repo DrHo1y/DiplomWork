@@ -1,0 +1,37 @@
+.repair {
+    height: 1000px;
+    background-color: #B5F36D;
+    display: block;
+
+    .repair__image {
+        width: 100%;
+        height: 70%;
+        background: url("./img/background.png") no-repeat ;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .repair__services {
+        margin: -15% 50px;
+        p{
+            // color: 
+            font-size: 26pt;
+            text-transform: uppercase;
+        }
+    }
+
+    .repair__title {
+        padding: 20px 0;
+        background-color: #FF7A00;
+        border: 10px solid #A65000;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+        h1 {
+            margin: 0;
+            font-size: 30pt;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+}

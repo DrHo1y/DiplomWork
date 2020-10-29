@@ -1,3 +1,9 @@
+@mixin align($jcontent) {
+    display: flex;
+    justify-content: $jcontent;
+    align-items: center;
+}
+
 .footer {
     background-color: #ff1e00;
     display: grid;
@@ -11,9 +17,7 @@
         margin-right: 2rem;
 
         .footer__links {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include align(space-between);
             padding: 1rem;
             a {
                 color: inherit;
@@ -29,16 +33,12 @@
         grid-template-rows: 1fr 1fr;
 
         .footer__copyright {
-            display: flex;
-            justify-content: center;
-            align-content: center;
+            @include align(center);
             padding: 10px;
         }
 
         .footer__develop {
-            display: flex;
-            justify-content: flex-end;
-            align-content: center;
+            @include align(flex-end);
             padding-right: 2rem;
         }
     }

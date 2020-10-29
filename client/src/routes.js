@@ -3,6 +3,7 @@ import {Switch, Route, Redirect} from 'react-router-dom'
 import { About } from './pages/about/About'
 import { Catalog } from './pages/Catalog'
 import { Home } from './pages/home/Home'
+import { Repair } from './pages/repair/Repair'
 
 export const useRoutes = () => {
     return (
@@ -15,6 +16,9 @@ export const useRoutes = () => {
             </Route>
             <Route path="/about" exact>
                 <About />
+            </Route>
+            <Route path="/repair" exact>
+                <Repair />
             </Route>
         </Switch>
     )
